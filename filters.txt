@@ -1,5 +1,8 @@
+# Hide brainly.ro problem limit blocker
 brainly.ro##+js(set-local-storage-item, simple-funnel-name, $remove$)
 brainly.ro##+js(set-local-storage-item, simple-funnel-cursor-set-time, $remove$)
 brainly.ro##+js(set-local-storage-item, simple-funnel-cursor, $remove$)
 
-
+# Hide cyber-edu.co current rank, points and leaderboard
+app.cyber-edu.co##div.stats-card-user > h2
+app.cyber-edu.co##button:has-text(Leaderboard)
