@@ -1,0 +1,5 @@
+brainly.ro##+js(set-local-storage-item, simple-funnel-name, $remove$)
+brainly.ro##+js(set-local-storage-item, simple-funnel-cursor-set-time, $remove$)
+brainly.ro##+js(set-local-storage-item, simple-funnel-cursor, $remove$)
+
+
