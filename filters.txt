@@ -21,3 +21,6 @@ claude.ai###_r_1rn_
 
 # block everything from the spotify front page except playlists
 open.spotify.com##.contentSpacing > section:not(:first-child)
+# Wikipedia donation popup
+en.wikipedia.org##.cn-fundraising
+
