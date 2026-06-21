@@ -10,3 +10,14 @@ app.cyber-edu.co##button:has-text(Leaderboard)
 # Dex online donation popup
 ||dexonline.ro/revive-images/7d1d36f47981c1d7edbb5195793b7510.png$image
 dexonline.ro##li.nav-item > .order-3.ms-auto.btn-danger.btn
+
+# don't remember
+chatgpt.com##.dark\:bg-token-main-surface-secondary.text-token-text-primary.bg-token-main-surface-primary.border-token-border-default.md\:items-center.shadow-xxs.dark\:border-transparent.lg\:mx-auto.\[text-wrap\:pretty\].text-sm.pe-3.ps-5.py-4.border.rounded-3xl.gap-4.items-start.w-full.flex
+
+# crap ton of anoying claude popups
+claude.ai##.md\:mx-0.pt-2\.5.pb-7.px-4.bg-surface-1.border-b-0.border.rounded-t-\[20px\].gap-md.justify-between.items-center.flex.-mb-5.mx-2.z-0.relative
+claude.ai##.border-transparent.bg-bg-300.pt-2.pb-7.border-b-0.rounded-t-\[20px\].px-3\.5.z-0.relative.border-0\.5.w-full
+claude.ai###_r_1rn_
+
+# block everything from the spotify front page except playlists
+open.spotify.com##.contentSpacing > section:not(:first-child)
