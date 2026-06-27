@@ -11,8 +11,10 @@ app.cyber-edu.co##button:has-text(Leaderboard)
 ||dexonline.ro/revive-images/7d1d36f47981c1d7edbb5195793b7510.png$image
 dexonline.ro##li.nav-item > .order-3.ms-auto.btn-danger.btn
 
-# don't remember
+# don't remember but something to do with chatgpt ))
 chatgpt.com##.dark\:bg-token-main-surface-secondary.text-token-text-primary.bg-token-main-surface-primary.border-token-border-default.md\:items-center.shadow-xxs.dark\:border-transparent.lg\:mx-auto.\[text-wrap\:pretty\].text-sm.pe-3.ps-5.py-4.border.rounded-3xl.gap-4.items-start.w-full.flex
+chatgpt.com##.z-20.bottom-full.end-0.start-0.absolute
+chatgpt.com##.dark\:border-token-border-strong\/60.border-token-border-strong\/60.dark\:bg-token-bg-tertiary\!.bg-token-bg-tertiary\!.border-b-0.rounded-b-none.rounded-t-\[32px\].pb-9\!.pt-2\.5.pe-2\.5\!.ps-4\!.-mb-9.relative.dark\:bg-token-main-surface-secondary.text-token-text-primary.bg-token-bg-primary.border-token-border-default.md\:items-center.dark\:border-transparent.lg\:mx-auto.\[text-wrap\:pretty\].text-sm.pe-3.ps-5.py-4.border.rounded-3xl.gap-4.items-start.w-full.flex
 
 # crap ton of anoying claude popups
 claude.ai##.md\:mx-0.pt-2\.5.pb-7.px-4.bg-surface-1.border-b-0.border.rounded-t-\[20px\].gap-md.justify-between.items-center.flex.-mb-5.mx-2.z-0.relative
@@ -23,4 +25,9 @@ claude.ai###_r_1rn_
 open.spotify.com##.contentSpacing > section:not(:first-child)
 # Wikipedia donation popup
 en.wikipedia.org##.cn-fundraising
+
+# bullshit ass popup saying i should get "pro letterbox"
+||a.ltrbxd.com/*m/upload/2l/fg/kz/6j/pro-950*.png?k=*$image
+
+instagram.com##+js(fullscreen-popup)
 

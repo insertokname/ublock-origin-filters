@@ -1,0 +1,77 @@
+/// fullscreen-popup.js
+(function() {
+    if (document.getElementById('ubo-fullscreen-popup')) return;
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const prevHtmlOverflow = htmlEl.style.getPropertyValue('overflow');
+    const prevHtmlOverflowPriority = htmlEl.style.getPropertyPriority('overflow');
+    const prevBodyOverflow = bodyEl ? bodyEl.style.getPropertyValue('overflow') : '';
+    const prevBodyOverflowPriority = bodyEl ? bodyEl.style.getPropertyPriority('overflow') : '';
+    htmlEl.style.setProperty('overflow', 'hidden', 'important');
+    if (bodyEl) bodyEl.style.setProperty('overflow', 'hidden', 'important');
+    function blockEvent(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    function blockKeys(e) {
+        const blockedKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'PageUp', 'PageDown', 'Home', 'End', ' ', 'Spacebar'];
+        if (blockedKeys.indexOf(e.key) !== -1) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }
+    document.addEventListener('wheel', blockEvent, { passive: false, capture: true });
+    document.addEventListener('touchmove', blockEvent, { passive: false, capture: true });
+    document.addEventListener('keydown', blockKeys, { capture: true });
+    const overlay = document.createElement('div');
+    overlay.id = 'ubo-fullscreen-popup';
+    overlay.style.cssText = 'position: fixed !important; inset: 0 !important; background: #000000 !important; z-index: 2147483647 !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; margin: 0 !important; padding: 0 !important; border: none !important;';
+    const text = document.createElement('div');
+    text.textContent = 'sample text';
+    text.style.cssText = 'color: #ffffff !important; font-size: 10vw !important; font-weight: 700 !important; font-family: sans-serif !important; text-align: center !important; margin: 0 0 48px 0 !important; padding: 0 !important; line-height: 1 !important; pointer-events: none !important;';
+    const btn = document.createElement('button');
+    btn.disabled = true;
+    function paintButton(enabled) {
+        btn.style.cssText = 'font-size: 24px !important; padding: 16px 32px !important; border: none !important; border-radius: 8px !important; background: #ffffff !important; color: #000000 !important; font-family: sans-serif !important; opacity: ' + (enabled ? '1' : '0.5') + ' !important; cursor: ' + (enabled ? 'pointer' : 'not-allowed') + ' !important;';
+    }
+    let remaining = 5;
+    btn.textContent = 'Close (' + remaining + ')';
+    paintButton(false);
+    const timer = setInterval(function() {
+        remaining -= 1;
+        if (remaining <= 0) {
+            clearInterval(timer);
+            btn.disabled = false;
+            btn.textContent = 'Close';
+            paintButton(true);
+        } else {
+            btn.textContent = 'Close (' + remaining + ')';
+        }
+    }, 1000);
+    function restoreScroll() {
+        if (prevHtmlOverflow) {
+            htmlEl.style.setProperty('overflow', prevHtmlOverflow, prevHtmlOverflowPriority);
+        } else {
+            htmlEl.style.removeProperty('overflow');
+        }
+        if (bodyEl) {
+            if (prevBodyOverflow) {
+                bodyEl.style.setProperty('overflow', prevBodyOverflow, prevBodyOverflowPriority);
+            } else {
+                bodyEl.style.removeProperty('overflow');
+            }
+        }
+        document.removeEventListener('wheel', blockEvent, true);
+        document.removeEventListener('touchmove', blockEvent, true);
+        document.removeEventListener('keydown', blockKeys, true);
+    }
+    btn.addEventListener('click', function() {
+        if (btn.disabled) return;
+        clearInterval(timer);
+        restoreScroll();
+        overlay.remove();
+    });
+    overlay.appendChild(text);
+    overlay.appendChild(btn);
+    document.documentElement.appendChild(overlay);
+})();
