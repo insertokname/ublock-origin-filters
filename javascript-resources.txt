@@ -27,7 +27,7 @@
     overlay.id = 'ubo-fullscreen-popup';
     overlay.style.cssText = 'position: fixed !important; inset: 0 !important; background: #000000 !important; z-index: 2147483647 !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; margin: 0 !important; padding: 0 !important; border: none !important;';
     const text = document.createElement('div');
-    text.textContent = 'sample text';
+    text.textContent = 'coaie ai cli-ul nu te baga pe reels';
     text.style.cssText = 'color: #ffffff !important; font-size: 10vw !important; font-weight: 700 !important; font-family: sans-serif !important; text-align: center !important; margin: 0 0 48px 0 !important; padding: 0 !important; line-height: 1 !important; pointer-events: none !important;';
     const btn = document.createElement('button');
     btn.disabled = true;
